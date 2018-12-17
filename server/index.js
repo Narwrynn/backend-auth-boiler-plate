@@ -2,8 +2,9 @@ require ('dotenv').config
 const express = require('express')
 const cors = require('cors')
 
-const errorHandler = require('./handlers/error');
-const authRoutes = require('./routes/auth');
+const errorHandler = require('./handlers/error')
+const authRoutes = require('./routes/auth')
+const {loginRequired, ensureCorrectUser} = require('./middleware/auth')
 
 const app = express()
 const PORT = process.env.PORT || 8080  //BOILERPLATE - Remeber to setup .env file
